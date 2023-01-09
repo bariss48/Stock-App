@@ -2,12 +2,19 @@ const Product = require("../models/Product");
 const User = require("../models/User");
 const moment = require("moment");
 const cloudinary = require("../config/cloudinary");
-const currentDate = moment().format("DD.MM.YYYY");
-const currentHour = moment().format("HH:mm:ss");
+//const currentDate = moment().format("DD.MM.YYYY");
+//const currentHour = moment().format("HH:mm:ss");
 
 const addProduct = async (req, res) => {
   try {
-    const { name, description, stock, image } = req.body;
+    const {
+      name,
+      description,
+      stock,
+      image,
+      currentHour,
+      currentDate,
+    } = req.body;
     const { username } = req.query;
 
     const user = await User.findOne({
@@ -86,7 +93,15 @@ const getAllProducts = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   try {
-    const { name, description, stock, image, inStock } = req.body;
+    const {
+      name,
+      description,
+      stock,
+      image,
+      inStock,
+      currentHour,
+      currentDate,
+    } = req.body;
 
     const { productId } = req.query;
 
