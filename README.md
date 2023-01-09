@@ -18,6 +18,12 @@ $ cd server (in root directory)
 $ npm install
 ```
 
+#### .env file
+
+```
+$ touch .env
+```
+
 #### you must configure environment variables.
 
 ```
