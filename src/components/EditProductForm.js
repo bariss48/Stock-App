@@ -187,18 +187,32 @@ const EditProductForm = () => {
                   />
                 </svg>
                 <div class="flex text-sm text-gray-600">
-                  <label
-                    for="file-upload"
-                    class="relative cursor-pointer rounded-md bg-white font-medium text-gray-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-grey-500 focus-within:ring-offset-2 hover:text-grey-500"
-                  >
-                    <input
-                      id="imgUpload"
-                      accept="image/*"
-                      type="file"
-                      onChange={handleProductImageUpload}
-                      required
-                    />
-                  </label>
+                  {productImg ? (
+                    <label
+                      for="file-upload"
+                      class="relative cursor-pointer rounded-md bg-white font-medium text-gray-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-grey-500 focus-within:ring-offset-2 hover:text-grey-500"
+                    >
+                      <input
+                        id="imgUpload"
+                        accept="image/*"
+                        type="file"
+                        onChange={handleProductImageUpload}
+                      />
+                    </label>
+                  ) : (
+                    <label
+                      for="file-upload"
+                      class="relative cursor-pointer rounded-md bg-white font-medium text-gray-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-grey-500 focus-within:ring-offset-2 hover:text-grey-500"
+                    >
+                      <input
+                        id="imgUpload"
+                        accept="image/*"
+                        type="file"
+                        onChange={handleProductImageUpload}
+                        required
+                      />
+                    </label>
+                  )}
                 </div>
                 <p class="text-xs text-gray-500">PNG, JPG, GIF </p>
               </div>
