@@ -172,15 +172,15 @@ const AddProductForm = () => {
             required
           />
         </div>
+        <div className="mt-8">
+          <button
+            type="submit"
+            className="w-full py-3 buttonbackground bg-gray text-white ring-red-400 focus:outline-none focus:ring-4 mt-6 rounded-lg transition duration-300 poppins "
+          >
+            Ekle
+          </button>
+        </div>
       </form>
-      <div className="mt-8">
-        <button
-          type="submit"
-          className="w-full py-3 buttonbackground bg-gray text-white ring-red-400 focus:outline-none focus:ring-4 mt-6 rounded-lg transition duration-300 poppins "
-        >
-          Ekle
-        </button>
-      </div>
     </>
   );
 };
