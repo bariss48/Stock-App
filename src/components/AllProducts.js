@@ -14,7 +14,7 @@ const AllProducts = () => {
     try {
       async function fetchData() {
         const response = await fetch(
-          `http://localhost:3500/product?username=${usernameArray[0].username}`,
+          `https://stockapp-api.onrender.com/product?username=${usernameArray[0].username}`,
           {
             method: "GET",
             headers: {

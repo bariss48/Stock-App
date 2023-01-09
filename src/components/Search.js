@@ -32,7 +32,7 @@ const Search = () => {
 
   async function fetchData() {
     const response = await fetch(
-      `http://localhost:3500/product/search?productname=${keyword}`,
+      `https://stockapp-api.onrender.com/product/search?productname=${keyword}`,
       {
         method: "GET",
         headers: {

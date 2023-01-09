@@ -10,17 +10,20 @@ const Login = () => {
   const addUserOnSubmit = () => {
     try {
       async function fetchPost() {
-        const response = await fetch(`http://localhost:3500/users`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username: username,
-            password: password,
-            email: email,
-          }),
-        });
+        const response = await fetch(
+          `https://stockapp-api.onrender.com/users`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              username: username,
+              password: password,
+              email: email,
+            }),
+          }
+        );
         const res = await response.json();
         if (res.status === 201) {
           swal("Başarılı!", `${res.message}`, "success").then(() => {

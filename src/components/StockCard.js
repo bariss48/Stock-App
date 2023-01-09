@@ -29,7 +29,7 @@ const StockCard = ({ _id, name, description, image, stock, date, inStock }) => {
 
   async function fetchPost() {
     const response = await fetch(
-      `http://localhost:3500/product?productId=${_id}`,
+      `https://stockapp-api.onrender.com/product?productId=${_id}`,
       {
         method: "DELETE",
         headers: {

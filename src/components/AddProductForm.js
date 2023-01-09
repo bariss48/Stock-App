@@ -43,7 +43,7 @@ const AddProductForm = () => {
   async function fetchPost() {
     formbody = { ...formbody, image: productImg };
     const response = await fetch(
-      `http://localhost:3500/product?username=${usernameArray[0].username}`,
+      `https://stockapp-api.onrender.com/product?username=${usernameArray[0].username}`,
       {
         method: "POST",
         headers: {

@@ -45,7 +45,7 @@ const EditProductForm = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:3500/product/single?productId=${id}`,
+        `https://stockapp-api.onrender.com/product/single?productId=${id}`,
         {
           method: "GET",
           headers: {
@@ -71,7 +71,7 @@ const EditProductForm = () => {
   async function fetchPost() {
     formbody = { ...formbody, image: productImg };
     const response = await fetch(
-      `http://localhost:3500/product?productId=${id}`,
+      `https://stockapp-api.onrender.com/product?productId=${id}`,
       {
         method: "PATCH",
         headers: {

@@ -21,7 +21,7 @@ const SpendProductForm = () => {
     try {
       async function fetchData() {
         const response = await fetch(
-          `http://localhost:3500/product?username=${usernameArray[0].username}`,
+          `https://stockapp-api.onrender.com/product?username=${usernameArray[0].username}`,
           {
             method: "GET",
             headers: {
@@ -46,13 +46,16 @@ const SpendProductForm = () => {
   }, []);
 
   async function fetchPost() {
-    const response = await fetch(`http://localhost:3500/product/spend`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formbody),
-    });
+    const response = await fetch(
+      `https://stockapp-api.onrender.com/product/spend`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formbody),
+      }
+    );
     const res = await response.json();
     if (res.status === 201) {
       swal("Başarılı!", `${res.message}`, "success");
