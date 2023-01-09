@@ -74,7 +74,8 @@ const AddProductForm = () => {
     <>
       <form
         className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 mt-6"
-        onSubmit={async () => {
+        onSubmit={async (e) => {
+          e.preventDefault();
           swal({
             title: "Ürün Ekleniyor...",
             text: "Lütfen Bekleyiniz",
@@ -87,7 +88,7 @@ const AddProductForm = () => {
               setDescription("");
               setName("");
               setStock("");
-              navigate("7dashboard");
+              navigate("/dashboard");
             });
           }, 2000);
         }}
