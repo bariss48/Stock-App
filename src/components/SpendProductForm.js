@@ -89,8 +89,9 @@ const SpendProductForm = () => {
           });
           setTimeout(async () => {
             await spendOnClick().then((e) => {
-              navigate("/dashboard");
-              window.location.reload();
+              navigate("/dashboard").then(() => {
+                window.location.reload();
+              });
             });
           }, 2000);
         }}
