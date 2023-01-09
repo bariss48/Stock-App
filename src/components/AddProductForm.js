@@ -4,6 +4,7 @@ import Label from "./Form/Label";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../image/spinner.gif";
+import moment from "moment";
 
 const AddProductForm = () => {
   const navigate = useNavigate();
@@ -34,10 +35,15 @@ const AddProductForm = () => {
     }
   };
 
+  const currentDate = moment().format("DD.MM.YYYY");
+  const currentHour = moment().format("HH:mm:ss");
+
   let formbody = {
     name: name,
     description: description,
     stock: stock,
+    currentDate: currentDate,
+    currentHour: currentHour,
   };
 
   async function fetchPost() {
