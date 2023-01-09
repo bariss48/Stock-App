@@ -56,11 +56,16 @@ const AddProductForm = () => {
     if (res.status === 201) {
       swal("Başarılı!", `${res.message}`, "success");
       setProductImg("");
+      navigator();
     } else {
       swal("Başarısız!", `${res.message}`, "error");
       setProductImg("");
     }
   }
+
+  const navigator = () => {
+    navigate("/dashboard");
+  };
 
   const addOnClick = async () => {
     try {
@@ -88,7 +93,6 @@ const AddProductForm = () => {
               setDescription("");
               setName("");
               setStock("");
-              navigate("/dashboard");
             });
           }, 2000);
         }}
