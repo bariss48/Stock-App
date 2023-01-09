@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useParams, Link } from "react-router-dom";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+import Dashboard from "./components/Dashboard";
+import ErrorPage from "./components/ErrorPage";
+import { useAuth } from "./context/AuthProvider";
+import AllProducts from "./components/AllProducts";
+import AddProductScreen from "./components/AddProductScreen";
+import EditProductScreen from "./components/EditProductScreen";
+import Results from "./components/Results";
+import MalzemeHarca from "./components/MalzemeHarca";
 
 function App() {
+  const { user } = useAuth();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route index element={<Login />} />
+      <Route path="signup" element={<SignUp />} />
+      {/* 
+      {user === true && <Route path="dashboard" element={<Dashboard />} />}
+      {user === true && (
+        <Route path="dashboard/products" element={<AllProducts />} />
+      )}   
+      
+      */}
+      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="product/add" element={<AddProductScreen />} />
+      <Route path="dashboard/products" element={<AllProducts />} />
+      <Route path="dashboard/product/:id" element={<EditProductScreen />} />
+      <Route path="dashboard/search/:name" element={<Results />} />
+      <Route path="product/spend" element={<MalzemeHarca />} />
+    </Routes>
   );
 }
 
