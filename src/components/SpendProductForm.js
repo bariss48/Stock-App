@@ -58,7 +58,11 @@ const SpendProductForm = () => {
     );
     const res = await response.json();
     if (res.status === 201) {
-      swal("Başarılı!", `${res.message}`, "success");
+      swal("Başarılı!", `${res.message}`, "success").then((e) => {
+        navigate("/dashboard").then(() => {
+          window.location.reload();
+        });
+      });
       setSelected("");
       setStock("");
     } else {
@@ -88,11 +92,7 @@ const SpendProductForm = () => {
             allowOutsideClick: false,
           });
           setTimeout(async () => {
-            await spendOnClick().then((e) => {
-              navigate("/dashboard").then(() => {
-                window.location.reload();
-              });
-            });
+            await spendOnClick();
           }, 2000);
         }}
       >
