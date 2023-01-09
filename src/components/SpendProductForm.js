@@ -59,9 +59,7 @@ const SpendProductForm = () => {
     const res = await response.json();
     if (res.status === 201) {
       swal("Başarılı!", `${res.message}`, "success").then((e) => {
-        navigate("/dashboard").then(() => {
-          window.location.reload();
-        });
+        navigate("/dashboard");
       });
       setSelected("");
       setStock("");
