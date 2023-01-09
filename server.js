@@ -18,7 +18,7 @@ connectDB();
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000"],
+    origin: ["https://stockapp-rqgb.onrender.com", "http://localhost:3000"],
   })
 );
 
